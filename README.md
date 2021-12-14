@@ -15,6 +15,7 @@ yarn install
 
 ## Environment Variables
 
+- 'API_BASE_URL' - Base host of the backend API
 - 'BASE_URL': Externally accessible base url of the webserver. Used to generate the callback url as part of credential issuer oauth flows
 - `PORT` - Default port to run webserver on. (Default to `3000`)
 
