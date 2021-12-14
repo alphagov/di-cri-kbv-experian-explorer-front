@@ -1,0 +1,18 @@
+{% from "hmpo-submit/macro.njk" import hmpoSubmit %}
+{% extends "hmpo-template.njk" %}
+{% set hmpoPageKey = "debug" %}
+
+
+{% block mainContent %}
+
+  {% if not isPageHeading %}
+    {{ super() }}
+  {% endif %}
+
+  <form action="/oauth2/authorize" method="POST">
+
+    {{ hmpoSubmit(ctx, {text: translate("buttons.authorizeAndReturn")}) }}
+
+</form>
+
+{% endblock %}
