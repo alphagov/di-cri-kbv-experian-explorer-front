@@ -1,3 +1,4 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "hmpo-submit/macro.njk" import hmpoSubmit %}
 {% extends "hmpo-template.njk" %}
 {% set hmpoPageKey = "debug" %}
@@ -10,9 +11,22 @@
   {% endif %}
 
   <form action="/oauth2/authorize" method="POST">
+      <p class="govuk-body">{{ govukButton({
+          text: translate("buttons.startAuthenticateForm"),
+          href:"/authenticate/",
+          classes:"govuk-button--secondary"
+          }) }}
+      </p>
 
-    {{ hmpoSubmit(ctx, {text: translate("buttons.authorizeAndReturn")}) }}
+      <p class="govuk-body">{{ govukButton({
+          text: translate("buttons.startKBVForm"),
+          href:"/kbv/",
+          classes:"govuk-button--secondary"
+          }) }}
+      </p>
 
-</form>
+      {{ hmpoSubmit(ctx, {text: translate("buttons.authorizeAndReturn")}) }}
+
+  </form>
 
 {% endblock %}

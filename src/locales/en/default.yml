@@ -4,6 +4,7 @@ buttons:
   next: Continue
   cancel: Cancel
   startKBVForm: Start KBV form journey
+  startAuthenticateForm: Start Authenticate form journey
 govuk:
   serviceName: Prove your identity
   backLink: Back
