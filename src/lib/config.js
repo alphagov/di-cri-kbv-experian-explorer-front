@@ -5,6 +5,7 @@ module.exports = {
     BASE_URL: process.env.API_BASE_URL || "http://localhost:5007",
     PATHS: {
       AUTHORIZE: "/authorize",
+      IDENTITY_CHECK: "/identity-check",
     },
   },
   APP: {

@@ -2,3 +2,20 @@ debug:
   title: di-ipv-cri-kbv-experian-front
   content:
     - Sample page for credential issuer
+
+passportDetails:
+  title: Enter your passport details
+  content:
+    - Enter your passport details as they appear on your passport
+
+identityDetails:
+  title: Enter your name and date of birth
+
+identityAddress:
+  title: Enter your address details
+
+identityBreakpoint:
+  title: Information sent out & returned
+
+identityDone:
+  title: Return
