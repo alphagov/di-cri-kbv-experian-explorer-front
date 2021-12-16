@@ -9,6 +9,7 @@ if (!appEnv.isLocal) {
 }
 
 module.exports = {
+  REDIS_HOST: "http://localhost:6379",
   API_BASE_URL: serviceConfig.coreBackAPIUrl || process.env.API_BASE_URL,
   AUTH_PATH: "/authorize",
   EXTERNAL_WEBSITE_HOST: process.env.EXTERNAL_WEBSITE_HOST,

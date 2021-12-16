@@ -1,0 +1,16 @@
+{% extends "form-template.njk" %}
+{% set hmpoPageKey = "identityBreakpoint" %}
+
+{% block innerContent %}
+  {{ super() }}
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+  <h1 class="govuk-heading-l">Data sent out</h1>
+
+  {{ govukSummaryList({
+    rows: valuesSummaryList
+  }) }}
+
+
+{% endblock %}

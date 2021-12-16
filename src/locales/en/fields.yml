@@ -1,0 +1,48 @@
+passportNumber:
+  label: Passport number
+  validation:
+    default: 'You need to supply your passport number'
+    exactlength: 'UK passports are 9 digits long'
+
+surname:
+  label: Surname
+  validation:
+    default: 'You need to supply your surname'
+
+givenNames:
+  label: Given names
+  validation:
+    default: 'You need to supply your given names'
+
+dateOfBirth:
+  legend: Date of birth
+  validation:
+    default: 'You need to supply your date of birth'
+    before: 'Issue date must be in the past'
+
+"date-day":
+  label: Day
+
+"date-month":
+  label: Month
+
+"date-year":
+  label: Year
+
+
+flatNumber:
+  label: Flat number
+houseName:
+  label: House Name
+houseNumber:
+  label: House Number
+street:
+  label: Street
+locality:
+  label: Locality
+postTown:
+  label: Town
+county:
+  label: County
+postCode:
+  label: Postcode
