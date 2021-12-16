@@ -14,4 +14,7 @@ module.exports = {
   EXTERNAL_WEBSITE_HOST: process.env.EXTERNAL_WEBSITE_HOST,
   PORT: process.env.PORT || 5000,
   SESSION_SECRET: process.env.SESSION_SECRET,
+  VERIFICATION_API_BASE_URL:
+    process.env.VERIFICATION_API_BASE_URL || "http://localhost:5007",
+  VERIFICATION_API_IDENTITY_VERIFICATION_PATH: "/identity-verification",
 };
