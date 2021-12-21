@@ -4,6 +4,17 @@ passportNumber:
     default: 'You need to supply your passport number'
     exactlength: 'UK passports are 9 digits long'
 
+api:
+  label: API
+  validation:
+    default: 'Please choose which Experian API to use'
+
+
+title:
+  label: Title
+  validation:
+    default: 'You need to supply your title'
+
 surname:
   label: Surname
   validation:

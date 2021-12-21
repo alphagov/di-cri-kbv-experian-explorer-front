@@ -2,11 +2,11 @@ const BaseController = require("hmpo-form-wizard").Controller;
 const axios = require("axios");
 
 const {
-  VERIFICATION_API_BASE_URL,
-  VERIFICATION_API_IDENTITY_VERIFICATION_PATH,
+  KBV_API_BASE_URL,
+  KBV_API_AUTHENTICATION_PATH,
 } = require("../../../lib/config");
 
-class IdentityVerificationController extends BaseController {
+class IdentityKBVController extends BaseController {
   async saveValues(req, res, next) {
     const {
       title,
@@ -38,7 +38,7 @@ class IdentityVerificationController extends BaseController {
 
     try {
       const identityVerificationResponse = await axios.post(
-        `${VERIFICATION_API_BASE_URL}${VERIFICATION_API_IDENTITY_VERIFICATION_PATH}`,
+        `${KBV_API_BASE_URL}${KBV_API_AUTHENTICATION_PATH}`,
         formValues
       );
 
@@ -52,4 +52,4 @@ class IdentityVerificationController extends BaseController {
   }
 }
 
-module.exports = IdentityVerificationController;
+module.exports = IdentityKBVController;

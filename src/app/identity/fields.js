@@ -3,6 +3,19 @@ module.exports = {
     type: "text",
     validate: ["numeric", { type: "exactlength", arguments: [9] }],
   },
+  api: {
+    type: 'select',
+    validate: 'required',
+    items: [
+      'fraud',
+      'kbv',
+    ]
+  },
+  title: {
+    type: "text",
+    validate: [],
+    journeyKey: "title",
+  },
   surname: {
     type: "text",
     validate: [],

@@ -17,4 +17,8 @@ module.exports = {
   VERIFICATION_API_BASE_URL:
     process.env.VERIFICATION_API_BASE_URL || "http://localhost:5007",
   VERIFICATION_API_IDENTITY_VERIFICATION_PATH: "/identity-verification",
+  KBV_API_BASE_URL:
+    process.env.KBV_API_BASE_URL || "http://kbv-api:5007",
+  VERIFICATION_API_IDENTITY_VERIFICATION_PATH: "/identity-verification",
+  KBV_API_AUTHENTICATION_PATH: "/saa",
 };
