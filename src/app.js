@@ -34,6 +34,17 @@ app.get("nunjucks").addGlobal("getContext", function () {
   };
 });
 
+app.get("nunjucks").addGlobal("isObject", function (value) {
+  // console.log(value);
+  // console.log(typeof value);
+  return "object" === typeof value;
+});
+
+app.get("nunjucks").addGlobal("isArray", function (value) {
+  // console.log(value);
+  return Array.isArray(value);
+});
+
 router.use("/oauth2", require("./app/oauth2"));
 router.use("/debug", require("./app/debug"));
 router.use("/identity", require("./app/identity"));

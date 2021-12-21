@@ -44,6 +44,19 @@ class IdentityVerificationController extends BaseController {
 
       req.session.identity = req.session.identity || {};
       req.session.identity.verificationData = identityVerificationResponse.data;
+
+      const clientResponsePayload =
+        identityVerificationResponse.data.clientResponsePayload;
+
+      clientResponsePayload.decisionElements =
+        clientResponsePayload.decisionElements.map((decisionElement) => {
+          return {
+            ...decisionElement,
+            otherData:
+              decisionElement?.otherData?.response &&
+              JSON.parse(decisionElement.otherData.response),
+          };
+        });
     } catch (e) {
       return next(e);
     }

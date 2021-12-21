@@ -1,17 +1,11 @@
 const BaseController = require("hmpo-form-wizard").Controller;
+const sessionModelJsonToSummaryListRow = require("../../../presenters/sessionModelJsonToSummaryListRow");
+const responseHeaderToSummaryListRow = require("../../../presenters/responseHeaderToSummaryList");
+const orchestrationDecisionToTable = require("../../../presenters/orchestrationDecisionsToTable");
+const decisionElementsToTable = require("../../../presenters/decisionElementsToTable");
+const hljs = require("highlight.js");
 
 class PassportDetailsController extends BaseController {
-  mapItemToSummaryListRow(item) {
-    return {
-      key: {
-        text: item[0],
-      },
-      value: {
-        text: item[1],
-      },
-    };
-  }
-
   extractKeyVerificationProperties(verificationData) {
     return {
       decision: verificationData?.overallReponse?.decision,
@@ -24,11 +18,33 @@ class PassportDetailsController extends BaseController {
       delete requestValue["csrf-secret"];
       delete requestValue["errors"];
 
-      locals.valuesSummaryList = Object.entries(requestValue).map(
-        this.mapItemToSummaryListRow
-      );
+      locals.valuesSummaryList = sessionModelJsonToSummaryListRow({
+        sessionModel: requestValue,
+      });
+
+      locals.responseHeaderSummaryList = responseHeaderToSummaryListRow({
+        responseHeader: req.session.identity.verificationData.responseHeader,
+      });
+
+      locals.responsePayloadOrchestrationDecisionTable =
+        orchestrationDecisionToTable({
+          orchestrationDecisions:
+            req.session.identity.verificationData.clientResponsePayload
+              .orchestrationDecisions,
+        });
+
+      locals.responsePayloadDecisionElementsTable = decisionElementsToTable({
+        orchestrationDecisions:
+          req.session.identity.verificationData.clientResponsePayload
+            .decisionElements,
+      });
 
       locals.verificationData = req.session.identity.verificationData;
+
+      locals.debugDataHtml = hljs.default.highlight(
+        `${JSON.stringify(locals.verificationData, null, 2)}`,
+        { language: "json" }
+      ).value;
 
       callback(null, locals);
     });
