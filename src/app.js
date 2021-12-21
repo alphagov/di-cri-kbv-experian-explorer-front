@@ -1,6 +1,8 @@
 const { PORT, SESSION_SECRET } = require("./lib/config");
 const { setup } = require("hmpo-app");
 
+const redisConfig = require("./lib/redis")();
+
 const loggerConfig = {
   console: true,
   consoleJSON: true,
@@ -17,6 +19,7 @@ const { app, router } = setup({
   port: PORT,
   logs: loggerConfig,
   session: sessionConfig,
+  redis: redisConfig,
   urls: {
     public: "/public",
   },
@@ -29,6 +32,17 @@ app.get("nunjucks").addGlobal("getContext", function () {
     keys: Object.keys(this.ctx),
     ctx: this.ctx.ctx,
   };
+});
+
+app.get("nunjucks").addGlobal("isObject", function (value) {
+  // console.log(value);
+  // console.log(typeof value);
+  return "object" === typeof value;
+});
+
+app.get("nunjucks").addGlobal("isArray", function (value) {
+  // console.log(value);
+  return Array.isArray(value);
 });
 
 router.use("/oauth2", require("./app/oauth2/router"));
