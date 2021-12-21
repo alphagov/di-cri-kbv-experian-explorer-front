@@ -1,0 +1,51 @@
+passportNumber:
+  label: Passport number
+  validation:
+    default: 'You need to supply your passport number'
+    exactlength: 'UK passports are 9 digits long'
+
+api:
+  label: API
+  validation:
+    default: 'Please choose which Experian API to use'
+
+
+title:
+  label: Title
+  validation:
+    default: 'You need to supply your title'
+
+surname:
+  label: Surname
+  validation:
+    default: 'You need to supply your surname'
+
+givenNames:
+  label: Given names
+  validation:
+    default: 'You need to supply your given names'
+
+dateOfBirth:
+  legend: Date of birth
+  validation:
+    default: 'You need to supply your date of birth'
+    before: 'Issue date must be in the past'
+
+"date-day":
+  label: Day
+
+"date-month":
+  label: Month
+
+"date-year":
+  label: Year
+
+
+houseNameNumber:
+  label: House name or number
+streetName:
+  label: Street name
+townCity:
+  label: Town or city
+postCode:
+  label: Postcode
