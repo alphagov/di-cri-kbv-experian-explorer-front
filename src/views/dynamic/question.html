@@ -1,0 +1,12 @@
+{% extends "dynamic-form.njk" %}
+
+{% set hmpoPageKey = "dynamicQuestion" %}
+
+{% block mainContent %}
+
+{{ question | dump }}
+
+{{ super() }}
+
+{% endblock %}
+

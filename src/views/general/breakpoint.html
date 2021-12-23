@@ -1,0 +1,105 @@
+{% extends "form-template.njk" %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set hmpoPageKey = "identityBreakpoint" %}
+
+{% block content %}
+
+{# ---------- SET HTML VARS #}
+
+{% set fieldValuesHtml %}
+  {{ govukSummaryList({
+    rows: valuesSummaryList
+  }) }}
+{% endset %}
+
+
+{% set responseHeaderHtml %}
+  {{ govukSummaryList({
+    rows: responseHeaderSummaryList
+  }) }}
+{% endset %}
+
+{% set responsePayloadHtml %}
+  <h2>Orchestration Decisions:</h2>
+  {{govukTable(
+      responsePayloadOrchestrationDecisionTable
+    )
+  }}
+
+  <h2>Decisions Elements:</h2>
+  {{govukTable(
+     responsePayloadDecisionElementsTable
+    )
+  }}
+{% endset %}
+
+{% set humanReadableAccordion %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+{{ govukTabs({
+  items: [
+    {
+      label: "Form Values",
+      id: "form-values",
+      panel: {
+        html: fieldValuesHtml
+      }
+    },
+    {
+      label: "Response Header",
+      id: "response-header",
+      panel: {
+        html: responseHeaderHtml
+      }
+    },
+    {
+      label: "Response Payload",
+      id: "response-payload",
+      panel: {
+        html: responsePayloadHtml
+      }
+    },
+    {
+      label: "Original Request Data",
+      id: "original-request-data",
+      panel: {
+        html: originalRequestDataHtml
+      }
+    }
+  ]
+}) }}
+  </div>
+</div>
+{% endset %}
+
+{# ---------- RENDER #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/stackoverflow-light.min.css">
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+      {
+          heading: {
+              text: "Data - Human Readable"
+          },
+          content: {
+              html:  humanReadableAccordion
+          }
+      },
+      {
+          heading: {
+              text: "Data - JSON"
+          },
+          content: {
+              html:  "<pre><code>" + debugDataHtml + "</code></pre>"
+          }
+      }
+  ]
+}) }}
+
+{{ super() }}
+
+{% endblock %}

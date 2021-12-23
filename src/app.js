@@ -1,7 +1,10 @@
+const debug = require("debug")("app");
 const { PORT, SESSION_SECRET } = require("./lib/config");
 const { setup } = require("hmpo-app");
 
 const redisConfig = require("./lib/redis")();
+
+const nunjucksApp = require("./nunjucks");
 
 const loggerConfig = {
   console: true,
@@ -23,28 +26,18 @@ const { app, router } = setup({
   urls: {
     public: "/public",
   },
+  views: ["./components", "./views"],
   publicDirs: ["../dist/public"],
   dev: true,
 });
 
-app.get("nunjucks").addGlobal("getContext", function () {
-  return {
-    keys: Object.keys(this.ctx),
-    ctx: this.ctx.ctx,
-  };
-});
-
-app.get("nunjucks").addGlobal("isObject", function (value) {
-  // console.log(value);
-  // console.log(typeof value);
-  return "object" === typeof value;
-});
-
-app.get("nunjucks").addGlobal("isArray", function (value) {
-  // console.log(value);
-  return Array.isArray(value);
-});
+nunjucksApp.setup(app.get("nunjucks"));
 
 router.use("/oauth2", require("./app/oauth2/router"));
 router.use("/debug", require("./app/debug/router"));
 router.use("/identity", require("./app/identity/router"));
+
+router.use("/general", require("./app/general/router"));
+router.use("/kbv", require("./app/kbv/router"));
+
+router.use("/dynamic", require("./app/dynamic/router"));
