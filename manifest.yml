@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: di-ipv-cri-experian-front
+  - name: di-ipv-cri-experian-front-minimal
     memory: 256M
     buildpack: nodejs_buildpack
     command: npm start
