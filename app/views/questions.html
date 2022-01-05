@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Questions
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Questions</h1>
+
+        <form action="/answers" method="post">
+            <input type="hidden" name="authRefNo" value="{{ authRefNo }}">
+            <input type="hidden" name="urn" value="{{ urn }}">
+
+            <div class="govuk-form-group">
+                {% for question in questions %}
+
+                <p>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            {{ question.text }}
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        {% for answer in question.answerFormat.answerList %}
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="{{ answer }}" name="{{ question.questionID }}" type="radio"
+                                   value="{{ answer }}">
+                            <label class="govuk-label govuk-radios__label" for="{{ answer }}">{{ answer }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </fieldset>
+                </p>
+
+                {% endfor %}
+            </div>
+
+
+            <button class="govuk-button" data-module="govuk-button">Submit answers</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
