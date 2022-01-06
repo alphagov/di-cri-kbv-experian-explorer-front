@@ -1,0 +1,14 @@
+
+buttons:
+  authorizeAndReturn: Authorize And Return
+  next: Continue
+  cancel: Cancel
+  startKBVForm: Start KBV form journey
+govuk:
+  serviceName: Prove your identity
+  backLink: Back
+  errorSummaryTitle: There’s a problem
+  error: Error
+  warning: Warning
+  skipLink: Skip to main content
+
