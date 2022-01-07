@@ -1,7 +1,7 @@
 {
-  "name": "di-ipv-core-front",
+  "name": "di-ipv-cri-kbv-experian-front",
   "version": "0.0.1",
-  "description": "User interface for the Identity Proofing and Verification (IPV) system within the GDS digital identity platform, GOV.UK Sign In.",
+  "description": "Identity Check and Knowledge Based Verification (KBV) for Identity Proofing and Verification (IPV)",
   "main": "src/server.js",
   "engines": {
     "node": "16.8.0",
