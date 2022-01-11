@@ -9,7 +9,17 @@ module.exports = {
     resetJourney: true,
     entryPoint: true,
     skip: true,
-    next: "details",
+    next: "select",
+  },
+  "/select": {
+    fields: ["formType"],
+    next: [
+      { field: "formType", value: "input", next: "details"},
+      { field: "formType", value: "dropDown", next: "dropDown"}
+    ]
+  },
+  "/dropDown" : {
+    next: "identity-verification"
   },
   "/details": {
     fields: ["surname", "givenNames", "dateOfBirth"],
