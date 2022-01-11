@@ -33,4 +33,9 @@ module.exports = {
   postCode: {
     type: "text",
   },
+  formType: {
+    type: "radios",
+    items: ["input","dropDown"],
+    validate: ["required"],
+  },
 };
