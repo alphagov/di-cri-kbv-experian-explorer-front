@@ -19,3 +19,8 @@ identityBreakpoint:
 
 identityDone:
   title: Return
+
+indexPage:
+  title: Experian Credential Issuer Spikes
+  content:
+    - "<a href='/identity'>Experian Identity/Fraud API</a>"

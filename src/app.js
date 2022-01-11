@@ -48,3 +48,7 @@ app.get("nunjucks").addGlobal("isArray", function (value) {
 router.use("/oauth2", require("./app/oauth2"));
 router.use("/debug", require("./app/debug"));
 router.use("/identity", require("./app/identity"));
+
+router.use("^/$", (req, res) => {
+  res.render("index");
+});
