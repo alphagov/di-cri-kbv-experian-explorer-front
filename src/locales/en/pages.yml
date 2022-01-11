@@ -24,3 +24,8 @@ indexPage:
   title: Experian Credential Issuer Spikes
   content:
     - "<a href='/identity'>Experian Identity/Fraud API</a>"
+
+select:
+  title: Identity
+  content:
+    - "Select the way you would like to interact with the Experian Identity/Fraud API"

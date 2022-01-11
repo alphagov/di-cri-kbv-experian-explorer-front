@@ -38,3 +38,11 @@ townCity:
   label: Town or city
 postCode:
   label: Postcode
+
+formType:
+  legend: " "
+  items:
+    input:
+      label: User input
+    dropDown:
+      label: Choose from a list
