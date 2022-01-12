@@ -3,6 +3,7 @@ const details = require("./controllers/details");
 const address = require("./controllers/address");
 const breakpoint = require("./controllers/breakpoint");
 const identityVerification = require("./controllers/identityVerification");
+const personSelector = require("./controllers/personSelector");
 
 module.exports = {
   "/": {
@@ -15,10 +16,12 @@ module.exports = {
     fields: ["formType"],
     next: [
       { field: "formType", value: "input", next: "details"},
-      { field: "formType", value: "dropDown", next: "dropDown"}
+      { field: "formType", value: "dropDown", next: "personSelector"}
     ]
   },
-  "/dropDown" : {
+  "/personSelector" : {
+    controller: personSelector,
+    fields: ["preconfiguredPerson"],
     next: "identity-verification"
   },
   "/details": {
