@@ -14,7 +14,7 @@ const sessionConfig = {
   secret: SESSION_SECRET,
 };
 
-const { router } = setup({
+const { app, router } = setup({
   config: { APP_ROOT: __dirname },
   port: PORT,
   logs: loggerConfig,
@@ -27,5 +27,28 @@ const { router } = setup({
   dev: true,
 });
 
+app.get("nunjucks").addGlobal("getContext", function () {
+  return {
+    keys: Object.keys(this.ctx),
+    ctx: this.ctx.ctx,
+  };
+});
+
+app.get("nunjucks").addGlobal("isObject", function (value) {
+  // console.log(value);
+  // console.log(typeof value);
+  return "object" === typeof value;
+});
+
+app.get("nunjucks").addGlobal("isArray", function (value) {
+  // console.log(value);
+  return Array.isArray(value);
+});
+
 router.use("/oauth2", require("./app/oauth2"));
 router.use("/debug", require("./app/debug"));
+router.use("/identity", require("./app/identity"));
+
+router.use("^/$", (req, res) => {
+  res.render("index");
+});
