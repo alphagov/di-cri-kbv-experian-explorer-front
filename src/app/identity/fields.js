@@ -38,4 +38,7 @@ module.exports = {
     items: ["input","dropDown"],
     validate: ["required"],
   },
+  preconfiguredPerson: {
+    type: "text"
+  }
 };
