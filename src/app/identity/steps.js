@@ -3,13 +3,26 @@ const details = require("./controllers/details");
 const address = require("./controllers/address");
 const breakpoint = require("./controllers/breakpoint");
 const identityVerification = require("./controllers/identityVerification");
+const personSelector = require("./controllers/personSelector");
 
 module.exports = {
   "/": {
     resetJourney: true,
     entryPoint: true,
     skip: true,
-    next: "details",
+    next: "select",
+  },
+  "/select": {
+    fields: ["formType"],
+    next: [
+      { field: "formType", value: "input", next: "details"},
+      { field: "formType", value: "dropDown", next: "personSelector"}
+    ]
+  },
+  "/personSelector" : {
+    controller: personSelector,
+    fields: ["preConfiguredValues"],
+    next: "identity-verification"
   },
   "/details": {
     fields: ["surname", "givenNames", "dateOfBirth"],

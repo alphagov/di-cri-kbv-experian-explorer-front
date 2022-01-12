@@ -38,3 +38,21 @@ townCity:
   label: Town or city
 postCode:
   label: Postcode
+
+formType:
+  legend: " "
+  items:
+    input:
+      label: User input
+    dropDown:
+      label: Choose from a list
+
+preConfiguredValues:
+  label: Choose from a list
+  items: 
+    arkilAlbert: 
+      label: Arkil, Albert
+    duffLinda:
+      label: Duff, Linda
+    pragnallGary:
+      label: Pragnall, Gary
