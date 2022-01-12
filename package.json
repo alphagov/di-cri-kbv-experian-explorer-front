@@ -1,7 +1,7 @@
 {
-  "name": "di-ipv-core-front",
+  "name": "di-ipv-cri-kbv-experian-front",
   "version": "0.0.1",
-  "description": "User interface for the Identity Proofing and Verification (IPV) system within the GDS digital identity platform, GOV.UK Sign In.",
+  "description": "Identity Check and Knowledge Based Verification (KBV) for Identity Proofing and Verification (IPV)",
   "main": "src/server.js",
   "engines": {
     "node": "16.8.0",
@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "build": "yarn build-sass && yarn && build-js && yarn copy-assets",
+    "build": "yarn build-sass && yarn build-js && yarn copy-assets",
     "build-sass": "rm -rf dist/public/style.css && sass --no-source-map src/assets/scss/application.scss dist/public/stylesheets/application.css --style compressed",
     "copy-assets": "mkdir -p dist && copyfiles -u 1 src/**/*.njk dist/ src/locales/**/** dist/ && copyfiles -u 3 src/assets/javascript/*.js dist/public/scripts",
     "build-js": "mkdir -p dist/public/javascripts; uglifyjs node_modules/govuk-frontend/govuk/all.js node_modules/hmpo-components/all.js src/assets/javascripts/*.js -o dist/public/javascripts/application.js",
