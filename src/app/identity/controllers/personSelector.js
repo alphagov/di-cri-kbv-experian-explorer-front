@@ -9,7 +9,7 @@ class PersonSelectorController extends BaseController {
     
     async saveValues(req, res, next) {
         const selectedOption = req.body.preConfiguredValues;
-        const preConfiguredValue = dummyData[selectedOption];
+        const preConfiguredValue = preConfiguredData[selectedOption];
 
         req.sessionModel.set("dateOfBirth",preConfiguredValue.dateOfBirth);
         req.sessionModel.set("givenNames",preConfiguredValue.firstName);
@@ -25,7 +25,7 @@ class PersonSelectorController extends BaseController {
     }
 }
 
-const dummyData = {
+const preConfiguredData = {
     "arkilAlbert": {
             firstName: "albert",
             surname: "arkil",
