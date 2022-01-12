@@ -29,3 +29,8 @@ select:
   title: Identity
   content:
     - "Select the way you would like to interact with the Experian Identity/Fraud API"
+
+personSelector:
+  title: Choose your person
+  content:
+    - "Select the credentials to go forward"
