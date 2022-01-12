@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: di-ipv-cri-kbv-experian-front
+  - name: di-cri-kbv-experian-explorer
     services:
       - session-cache
     memory: 256M
