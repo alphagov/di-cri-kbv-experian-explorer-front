@@ -21,7 +21,7 @@ module.exports = {
   },
   "/personSelector" : {
     controller: personSelector,
-    fields: ["preconfiguredPerson"],
+    fields: ["preConfiguredValues"],
     next: "identity-verification"
   },
   "/details": {
