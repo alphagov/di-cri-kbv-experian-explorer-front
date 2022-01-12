@@ -1,8 +1,8 @@
 # Digital Identity Credential Issuer
 
-`di-ipv-cri-kbv-experian-front`
+`di-cri-kbv-experian-explorer-front`
 
-Frontend for Experian Knowledge Based Verification and Counter Fraud Credential Issuer
+Explorer frontend for Experian Knowledge Based Verification and Counter Fraud Credential Issuer
 
 This is the home for the front end user interface for a credential issuer as a part of the Identity Proofing and Verification (IPV) system within the GDS digital identity platform. Other repositories are used for core services or other credential issuers.
 

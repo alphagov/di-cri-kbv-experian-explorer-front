@@ -1,8 +1,8 @@
 {
-  "name": "di-ipv-cri-kbv-experian-front",
+  "name": "di-cri-kbv-experian-explorer-front",
   "version": "0.0.1",
-  "description": "Identity Check and Knowledge Based Verification (KBV) for Identity Proofing and Verification (IPV)",
-  "main": "src/server.js",
+  "description": "Explorer for Identity Check and Knowledge Based Verification (KBV) for Identity Proofing and Verification (IPV)",
+  "main": "src/app.js",
   "engines": {
     "node": "16.8.0",
     "yarn": "1.22.10"
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alphagov/di-ipv-core-front.git"
+    "url": "git+https://github.com/alphagov/di-cri-kbv-experian-explorer-front.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alphagov/di-ipv-core-front/issues"
+    "url": "https://github.com/alphagov/di-cri-kbv-experian-explorer-front/issues"
   },
-  "homepage": "https://github.com/alphagov/di-ipv-core-front#readme",
+  "homepage": "https://github.com/alphagov/di-cri-kbv-experian-explorer-front#readme",
   "packageManager": "yarn@1.20.0",
   "devDependencies": {
     "chai": "4.3.4",
