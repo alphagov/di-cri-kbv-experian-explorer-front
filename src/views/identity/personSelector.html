@@ -1,0 +1,23 @@
+{% from "hmpo-select/macro.njk" import hmpoSelect %}
+{% from "hmpo-submit/macro.njk" import hmpoSubmit %}
+{% extends "hmpo-template.njk" %}
+{% set hmpoPageKey = "dropDown" %}
+
+
+{% block mainContent %}
+
+    {% if not isPageHeading %}
+        {{ super() }}
+    {% endif %}
+
+
+    {{ hmpoSelect(ctx, { 
+            text: "test", 
+            label: "Person", 
+            items: preConfiguredValues
+        }) 
+    }}
+
+    {{ hmpoSubmit(ctx, { id: "document-submit-button" }) }}
+
+{% endblock %}
