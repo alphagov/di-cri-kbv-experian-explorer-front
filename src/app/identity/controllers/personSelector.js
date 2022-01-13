@@ -6,7 +6,7 @@ class PersonSelectorController extends BaseController {
             callback(null, locals);
         });
     }
-    
+
     async saveValues(req, res, next) {
         const selectedOption = req.body.preConfiguredValues;
         const preConfiguredValue = preConfiguredData[selectedOption];
@@ -16,9 +16,9 @@ class PersonSelectorController extends BaseController {
         req.sessionModel.set("surname",preConfiguredValue.surname);
         req.sessionModel.set("title",preConfiguredValue.title);
         req.sessionModel.set("houseNameNumber",preConfiguredValue.addresses[0].houseNameNumber);
-        req.sessionModel.set("street",preConfiguredValue.addresses[0].street);
+        req.sessionModel.set("streetName",preConfiguredValue.addresses[0].street);
         req.sessionModel.set("townCity",preConfiguredValue.addresses[0].townCity);
-        req.sessionModel.set("postcode",preConfiguredValue.addresses[0].postcode);
+        req.sessionModel.set("postCode",preConfiguredValue.addresses[0].postcode);
         // req.sessionModel.set("addresses",preConfiguredValue.addresses);
 
         super.saveValues(req, res, next);
@@ -71,7 +71,7 @@ const preConfiguredData = {
                 }
             ],
         },
-    
+
 };
 
 module.exports = PersonSelectorController;
