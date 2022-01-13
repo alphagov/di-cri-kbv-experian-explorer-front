@@ -27,50 +27,62 @@ class PersonSelectorController extends BaseController {
 
 const preConfiguredData = {
     "arkilAlbert": {
-            firstName: "albert",
-            surname: "arkil",
-            title: "mr",
-            dateOfBirth: "1948-07-16",
-            addresses: [
+        firstName: "albert",
+        surname: "arkil",
+        title: "mr",
+        dateOfBirth: "1948-07-16",
+        addresses: [
                 {
-                    addressType: "CURRENT",
-                    street: "Stocks Hill",
-                    townCity: "Workingham",
-                    houseNameNumber: 3,
-                    postcode: "CA14 5PH"
-                }
-            ]
-        },
+                addressType: "CURRENT",
+                street: "Stocks Hill",
+                townCity: "Workingham",
+                houseNameNumber: 3,
+                postcode: "CA14 5PH"
+            }
+        ]
+    },
     "duffLinda": {
-            firstName: "Linda",
-            surname: "Duff",
-            title: "Miss",
-            dateOfBirth: "1986-01-21",
-            addresses: [
-                {
-                    addressType: "CURRENT",
-                    street: "Hand Avenue",
-                    townCity: "Leicester",
-                    houseNameNumber: 198,
-                    postcode: "LE3 1SL"
-                }
-            ],
-        },
+        firstName: "Linda",
+        surname: "Duff",
+        title: "Miss",
+        dateOfBirth: "1990-11-12",
+        addresses: [
+            {
+                addressType: "CURRENT",
+                street: "Hand Avenue",
+                townCity: "Leicester",
+                houseNameNumber: 198,
+                postcode: "LE3 1SL"
+            }
+        ],
+    },
     "pragnallGary": {
-            firstName: "Gary",
-            surname: "Pragnall",
-            title: "Mr",
-            dateOfBirth: "1962-07-15",
-            addresses: [
-                {
-                    addressType: "CURRENT",
-                    street: "Norwich Road",
-                    townCity: "Norwich",
-                    houseNameNumber: "Brooke Post Office 4",
-                    postcode: "N15 1AB"
-                }
-            ],
-        },
+        firstName: "Gary",
+        surname: "Pragnall",
+        title: "Mr",
+        dateOfBirth: "1962-07-15",
+        addresses: [
+            {
+                addressType: "CURRENT",
+                street: "Norwich Road",
+                townCity: "Norwich",
+                houseNameNumber: "Brooke Post Office 4",
+                postcode: "N15 1AB"
+            }
+        ],
+    },
+    "ramachandranKatherine": {
+        firstName: "Katherine",
+        surname: "Ramachandran",
+        title: "Miss",
+        dateOfBirth: "1979-07-20",
+        addresses: [{
+            addressType: "CURRENT",
+            street: "Lime tree avenue",
+            townCity: "Nottingham",
+            postcode: "NG8 6AB"
+        }]
+    }
 
 };
 
