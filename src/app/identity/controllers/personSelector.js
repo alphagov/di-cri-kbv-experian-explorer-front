@@ -75,3 +75,4 @@ const preConfiguredData = {
 };
 
 module.exports = PersonSelectorController;
+
