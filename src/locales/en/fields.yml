@@ -49,10 +49,10 @@ formType:
 
 preConfiguredValues:
   label: Choose from a list
-  items: 
-    arkilAlbert: 
-      label: Arkil, Albert
+  items:
+    arkilAlbert:
+      label: Arkil, Albert - Not authenticated
     duffLinda:
-      label: Duff, Linda
-    pragnallGary:
-      label: Pragnall, Gary
+      label: Duff, Linda - Continue and Investigate
+    decerqueiraKenneth:
+      label: Decerqueria, Kenneth - Authenticated level 1

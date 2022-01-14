@@ -40,6 +40,6 @@ module.exports = {
   },
   preConfiguredValues: {
     type: "select",
-    items: ["arkilAlbert","duffLinda","pragnallGary"]
+    items: ["arkilAlbert","duffLinda","decerqueiraKenneth"]
   }
 };
