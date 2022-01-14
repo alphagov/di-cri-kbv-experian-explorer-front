@@ -56,31 +56,17 @@ const preConfiguredData = {
             }
         ],
     },
-    "pragnallGary": {
-        firstName: "Gary",
-        surname: "Pragnall",
-        title: "Mr",
-        dateOfBirth: "1962-07-15",
-        addresses: [
-            {
-                addressType: "CURRENT",
-                street: "Norwich Road",
-                townCity: "Norwich",
-                houseNameNumber: "Brooke Post Office 4",
-                postcode: "N15 1AB"
-            }
-        ],
-    },
-    "ramachandranKatherine": {
-        firstName: "Katherine",
-        surname: "Ramachandran",
-        title: "Miss",
-        dateOfBirth: "1979-07-20",
+    "decerqueiraKenneth": {
+        firstName: "Kenneth",
+        surname: "decerqueira",
+        title: "MR",
+        dateOfBirth: "1964-06-14",
         addresses: [{
             addressType: "CURRENT",
-            street: "Lime tree avenue",
-            townCity: "Nottingham",
-            postcode: "NG8 6AB"
+            street: "Hadley Road",
+            townCity: "Bath",
+            houseNameNumber: "8",
+            postcode: "BA2 5AA"
         }]
     }
 
