@@ -11,7 +11,15 @@ class PersonSelectorController extends BaseController {
         const selectedOption = req.body.preConfiguredValues;
         const preConfiguredValue = preConfiguredData[selectedOption];
 
-        req.sessionModel.set("dateOfBirth",preConfiguredValue.dateOfBirth);
+        // aged DOB is calculated by taking (today - date of entry + date of birth).
+        const today = new Date();
+        const dateOfEntry = new Date(preConfiguredValue.dateOfEntry);
+        const dateOfBirth = new Date(preConfiguredValue.fixedDoB);
+
+        const agedDateOfBirth = today.getTime() - dateOfEntry.getTime() + dateOfBirth.getTime();
+        const formattedDataOfBirth = new Date(agedDateOfBirth).toISOString().split('T')[0];
+
+        req.sessionModel.set("dateOfBirth",formattedDataOfBirth);
         req.sessionModel.set("givenNames",preConfiguredValue.firstName);
         req.sessionModel.set("surname",preConfiguredValue.surname);
         req.sessionModel.set("title",preConfiguredValue.title);
@@ -30,7 +38,6 @@ const preConfiguredData = {
         firstName: "albert",
         surname: "arkil",
         title: "mr",
-        dateOfBirth: "1948-07-16",
         addresses: [
                 {
                 addressType: "CURRENT",
@@ -39,13 +46,14 @@ const preConfiguredData = {
                 houseNameNumber: 3,
                 postcode: "CA14 5PH"
             }
-        ]
+        ],
+        dateOfEntry: "2017-03-24",
+        fixedDoB: "1943-10-05"
     },
     "duffLinda": {
         firstName: "Linda",
         surname: "Duff",
         title: "Miss",
-        dateOfBirth: "1990-11-12",
         addresses: [
             {
                 addressType: "CURRENT",
@@ -55,19 +63,22 @@ const preConfiguredData = {
                 postcode: "LE3 1SL"
             }
         ],
+        dateOfEntry: "2017-03-24",
+        fixedDoB: "1986-01-20",
     },
     "decerqueiraKenneth": {
         firstName: "Kenneth",
         surname: "decerqueira",
         title: "MR",
-        dateOfBirth: "1964-06-14",
         addresses: [{
             addressType: "CURRENT",
             street: "Hadley Road",
             townCity: "Bath",
             houseNameNumber: "8",
             postcode: "BA2 5AA"
-        }]
+        }],
+        dateOfEntry: "2017-03-24",
+        fixedDoB: "1959-08-23"
     }
 
 };
