@@ -48,7 +48,7 @@ const preConfiguredData = {
             }
         ],
         dateOfEntry: "2017-03-24",
-        fixedDoB: "1959-04-19"
+        fixedDoB: "1943-10-05"
     },
     "duffLinda": {
         firstName: "Linda",
@@ -64,7 +64,7 @@ const preConfiguredData = {
             }
         ],
         dateOfEntry: "2017-03-24",
-        fixedDoB: "1959-11-17"
+        fixedDoB: "1986-01-20",
     },
     "decerqueiraKenneth": {
         firstName: "Kenneth",
