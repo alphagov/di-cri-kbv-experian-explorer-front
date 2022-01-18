@@ -4,8 +4,8 @@
   "description": "Explorer for Identity Check and Knowledge Based Verification (KBV) for Identity Proofing and Verification (IPV)",
   "main": "src/app.js",
   "engines": {
-    "node": "16.8.0",
-    "yarn": "1.22.10"
+    "node": "16.13.1",
+    "yarn": "1.22.17"
   },
   "scripts": {
     "start": "node src/app.js",
